@@ -1,0 +1,59 @@
+/* Reset body styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Transparent bottom navigation bar */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: transparent; /* Transparent background */
+  height: 60px; /* Fixed height */
+  z-index: 1000;
+  border-top: 1px solid #1e6ea2; /* Top border with specified color */
+}
+
+/* Style individual nav items */
+.nav-item {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Circular background for each icon */
+.nav-item a {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 50%;
+  background-color: #b9e2f9; /* Default circular BG color */
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Add active class to the clicked nav item */
+.nav-item.active a {
+  background-color: #87c8f0; /* Active circular BG color */
+}
+
+/* Hover effect */
+.nav-item a:hover {
+  transform: scale(1.1); /* Slight scaling on hover for better UX */
+  background-color: #87c8f0;
+}
+
+/* Icon size */
+.nav-item img {
+  width: 35px;
+  height: 35px;
+  vertical-align: middle; /* Align icons inside the circular background */
+}
