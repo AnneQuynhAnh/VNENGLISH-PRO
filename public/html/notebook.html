@@ -5,15 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Notebook</title>
     <!-- Link to the CSS file for styling -->
-    <link rel="stylesheet" href="../CSS/navbar.css" />
+    <link rel="stylesheet" href="../css/notebook.css" />
+    <link rel="stylesheet" href="../css/navbar.css" />
+    <link rel="stylesheet" href="../css/topbar.css" />
   </head>
   <body>
-    <!-- Page-specific content for Chatbot -->
-    <div class="content">
-      <h1>Welcome to the Notebook Page</h1>
+    <!-- Main Container -->
+    <div class="notebook-container">
+      <!-- Your Progress Section -->
+      <div class="progress-section">
+        <div class="progress-text">
+          <h2>Great Job!</h2>
+          <p>You have learnt <strong>12 words</strong> today.</p>
+        </div>
+        <div class="progress-circle">
+          <div class="circle">12</div>
+        </div>
+      </div>
+
+      <!-- Recently Added Section -->
+      <div class="section-title">Recently Added</div>
+      <div class="scrollable-container">
+        <div class="folder">
+          <div class="folder-icon"></div>
+          <div class="folder-name">Shopping</div>
+        </div>
+        <div class="folder">
+          <div class="folder-icon"></div>
+          <div class="folder-name">Games</div>
+        </div>
+        <div class="folder">
+          <div class="folder-icon"></div>
+          <div class="folder-name">Vocabulary Topics</div>
+        </div>
+        <div class="folder">
+          <div class="folder-icon"></div>
+          <div class="folder-name">Other Topics</div>
+        </div>
+        <!-- Add more folders as needed -->
+      </div>
+
+      <!-- Professional Topics Section -->
+      <div class="section-title">Professional Topics</div>
+      <div class="scrollable-container">
+        <div class="folder">
+          <div class="folder-icon"></div>
+          <div class="folder-name">Business</div>
+        </div>
+        <div class="folder">
+          <div class="folder-icon"></div>
+          <div class="folder-name">Technology</div>
+        </div>
+        <div class="folder">
+          <div class="folder-icon"></div>
+          <div class="folder-name">Science</div>
+        </div>
+        <div class="folder">
+          <div class="folder-icon"></div>
+          <div class="folder-name">Arts</div>
+        </div>
+        <!-- Add more folders as needed -->
+      </div>
     </div>
 
     <!-- Script to dynamically inject the navigation bar -->
-    <script src="../JS/navbar.js"></script>
+    <script src="../js/navbar.js"></script>
+    <script src="../js/topbar.js"></script>
   </body>
 </html>

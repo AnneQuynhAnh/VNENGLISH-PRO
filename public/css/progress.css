@@ -1,0 +1,85 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+  color: #333;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+}
+
+.progress-container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+/* Progress Chart Section */
+.progress-chart {
+  margin-top: 80px;
+  margin-bottom: 40px;
+  padding: 20px 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 5px solid #1e6ea2;
+}
+
+.progress-chart h2 {
+  margin-bottom: 20px;
+  color: #1e6ea2;
+  font-size: 24px;
+  text-align: center;
+}
+
+/* Friend's Progress Section */
+.friends-progress {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 5px solid #1e6ea2;
+}
+
+.friends-progress h2 {
+  margin-bottom: 20px;
+  color: #1e6ea2;
+  font-size: 24px;
+  text-align: center;
+}
+
+.ranking-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.ranking-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.ranking-list li:last-child {
+  border-bottom: none;
+}
+
+.ranking {
+  font-size: 18px;
+  color: #333;
+}
+
+.hours {
+  font-size: 18px;
+  color: #1e6ea2;
+}

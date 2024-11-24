@@ -1,0 +1,495 @@
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+}
+
+/* Fixed Top Navigation Bar */
+.top-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff; /* White background */
+  height: 60px; /* Fixed height */
+  z-index: 1000; /* Ensure topbar stays on top */
+  border-bottom: 1px solid #1e6ea2;
+  padding: 0 20px;
+}
+
+/* Fixed Bottom Navigation Bar */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff; /* White background */
+  height: 60px; /* Fixed height */
+  z-index: 1000; /* Ensure navbar stays on top */
+  border-top: 1px solid #1e6ea2;
+}
+
+/* Content container */
+.content {
+  padding: 20px;
+  margin-top: 70px; /* Space for fixed topbar */
+  margin-bottom: 70px; /* Space for fixed navbar */
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Search Bar */
+.search-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.search-bar input {
+  width: 75%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.search-bar button {
+  margin-left: 5px;
+  padding: 10px 15px;
+  font-size: 16px;
+  background-color: #87c8f0;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.search-bar button:hover {
+  background-color: #76b8e0;
+}
+
+/* Unit Section */
+.unit {
+  background-color: #87c8f0;
+  color: white;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.unit h2 {
+  margin-bottom: 5px;
+}
+
+.unit p {
+  margin: 0;
+  font-size: 18px;
+}
+
+/* Lessons Section */
+.lessons {
+  display: flex;
+  flex-direction: column; /* Stack lesson divs */
+  gap: 10px; /* Space between lessons */
+}
+
+/* Individual Lesson */
+.lesson {
+  background-color: #ecedf3; /* Light gray background */
+  padding: 15px;
+  border-radius: 5px;
+  color: #333;
+  font-size: 18px;
+  text-align: left; /* Align text to the left */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Add slight shadow for depth */
+}
+
+/* Test Section */
+.test {
+  background-color: #87c8f0;
+  color: white;
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 5px;
+  text-align: left;
+}
+.test h2 {
+  margin-bottom: 5px;
+}
+
+.test p {
+  margin: 0;
+  font-size: 18px;
+}
+
+/* Lessons Section */
+/* Lessons Section */
+.lessons {
+  margin-bottom: 20px; /* Add spacing below the section */
+}
+
+.lesson {
+  background-color: #ecedf3; /* Light gray background */
+  padding: 15px 20px 15px 50px; /* Add space for decoration on the left */
+  margin-bottom: 10px; /* Add spacing between lessons */
+  border-radius: 5px; /* Rounded corners */
+  position: relative; /* Position relative for decoration placement */
+}
+
+.lesson h3 {
+  margin: 0; /* Remove default margin */
+  font-size: 20px; /* Font size for lesson titles */
+  color: #333; /* Text color */
+}
+
+.lesson p {
+  margin: 5px 0 0; /* Add spacing below the title */
+  color: #666; /* Subdued text color for the description */
+}
+
+/* Left-side decoration: circle and line */
+.lesson::before {
+  content: "";
+  position: absolute;
+  top: 20px; /* Align the circle vertically */
+  left: 20px; /* Position the circle */
+  width: 15px;
+  height: 15px;
+  background-color: #1e6ea2; /* Circle color */
+  border-radius: 50%; /* Make it a circle */
+}
+
+.lesson::after {
+  content: "";
+  position: absolute;
+  top: 35px; /* Place line below the circle */
+  left: 27px; /* Align with the circle center */
+  width: 2px; /* Line width */
+  height: calc(100% - 45px); /* Dynamic height based on content */
+  background-color: #1e6ea2; /* Line color */
+}
+/* modal for lesson 1 */
+
+/* Fullscreen Modal */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9); /* Dark semi-transparent overlay */
+  z-index: 1000;
+  overflow-y: auto; /* Enable scrolling for long content */
+}
+
+/* Fullscreen Modal Content */
+.modal-content {
+  background: linear-gradient(145deg, #ffffff, #f0f4f9); /* Subtle gradient */
+  width: 100%;
+  height: 100%;
+  padding: 30px 15px; /* Adjust padding for better layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align content at the top */
+  gap: 20px; /* Space between content */
+  position: relative; /* Relative positioning for absolute elements */
+}
+
+/* Close Button */
+.close-button {
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #555;
+  background: none;
+  border: none;
+  text-align: left;
+}
+
+.close-button:hover {
+  color: #1e6ea2;
+}
+
+/* Quiz Heading */
+.modal-content h2 {
+  color: #1e6ea2;
+  font-size: 24px;
+  margin: 0; /* Remove excess margins */
+  padding: 15px 0; /* Consistent padding */
+  text-align: center;
+  border-bottom: 2px solid #1e6ea2; /* Subtle underline */
+}
+
+/* Quiz Section Styling */
+.quiz-section {
+  flex: none; /* Prevent stretching */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align activities at the top */
+  gap: 20px; /* Space between activities */
+}
+
+/* Activity Heading */
+.activity h3 {
+  color: #1e6ea2;
+  font-size: 36px;
+  margin-top: 5px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Choices Section */
+ul.matching-quiz {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Add spacing between options */
+}
+
+/* Choice Option as Divs */
+ul.matching-quiz li {
+  padding: 15px;
+  font-size: 18px;
+  background-color: #f9f9fc; /* Light background for options */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: #333;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+ul.matching-quiz li:hover {
+  background-color: #87c8f0; /* Highlighted on hover */
+  color: #fff;
+  transform: scale(1.02); /* Slight pop effect */
+}
+
+ul.matching-quiz li.selected {
+  background-color: #1e6ea2; /* Selected state */
+  color: #fff;
+}
+
+/* Submit Button */
+.next-button,
+.submit-quiz {
+  background-color: #1e6ea2;
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 90%; /* Centered button width */
+  max-width: 600px;
+  margin: 20px auto; /* Center horizontally and add space */
+  position: absolute; /* Position the button at the bottom */
+  bottom: 30px; /* Space from the bottom edge */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Align to center */
+}
+
+.next-button:hover,
+.submit-quiz:hover {
+  background-color: #155480;
+}
+
+/* Option Container */
+.options {
+  display: flex;
+  flex-direction: column; /* Stack options vertically */
+  gap: 15px; /* Add spacing between options */
+  margin-top: 20px;
+}
+
+/* Individual Option Box */
+.option {
+  padding: 15px;
+  background-color: #f9f9fc; /* Light background */
+  border: 2px solid #ddd; /* Subtle border */
+  border-radius: 10px; /* Rounded corners */
+  text-align: center;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Hover Effect */
+.option:hover {
+  background-color: #87c8f0; /* Highlighted background */
+  color: #fff; /* White text on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Selected State */
+.option.selected {
+  background-color: #87c8f0; /* Selected background */
+  color: #fff; /* White text for selected option */
+  border-color: #1e6ea2; /* Highlight border */
+}
+/* Prevent background scrolling */
+.no-scroll {
+  overflow: hidden;
+  height: 100%; /* Optional: Ensures no extra scrolling */
+}
+/* Question 2 */
+
+.sentence {
+  display: flex; /* Align speaker and sentence horizontally */
+  align-items: center; /* Vertically center speaker with text */
+  gap: 10px; /* Space between the speaker button and the sentence */
+}
+
+.speaker-button {
+  background-color: #1e6ea2; /* Blue background */
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: flex;
+  justify-content: center; /* Center icon inside button */
+  align-items: center; /* Center icon inside button */
+}
+
+.speaker-button img {
+  width: 25px; /* Icon size */
+  height: 25px;
+}
+
+.speaker-button:hover {
+  background-color: #155480; /* Darker blue on hover */
+  transform: scale(1.1); /* Slight zoom effect */
+}
+
+#answerInput {
+  width: 100%; /* Full width */
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#answerInput:focus {
+  border-color: #1e6ea2; /* Blue border on focus */
+  box-shadow: 0 0 5px rgba(30, 110, 162, 0.5); /* Subtle shadow */
+}
+
+.activity {
+  margin-top: 40px;
+  display: flex; /* Align elements horizontally */
+  align-items: center; /* Vertically center elements */
+  gap: 15px; /* Space between elements */
+  flex-wrap: wrap; /* Allow elements to wrap to the next line if needed */
+}
+
+.speaker-button {
+  background-color: #1e6ea2; /* Blue background */
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: flex;
+  justify-content: center; /* Center icon inside button */
+  align-items: center; /* Center icon inside button */
+}
+
+.speaker-button img {
+  width: 25px;
+  height: 25px;
+}
+
+.speaker-button:hover {
+  background-color: #155480; /* Darker blue on hover */
+  transform: scale(1.1); /* Slight zoom effect */
+}
+
+h3.sentence {
+  margin: 0; /* Remove default margins */
+  font-size: 1.5rem;
+  color: #333;
+}
+
+#answerInput {
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  flex-grow: 1; /* Make input field grow to fill remaining space */
+  min-width: 200px; /* Ensure a minimum size for smaller screens */
+}
+
+#answerInput:focus {
+  border-color: #1e6ea2; /* Blue border on focus */
+  box-shadow: 0 0 5px rgba(30, 110, 162, 0.5); /* Subtle shadow */
+}
+
+/* Question 1 Specific Styling */
+.question1-activity {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center the word "Country" */
+  gap: 20px; /* Add space between "Country" and options */
+}
+
+.options {
+  display: flex;
+  flex-direction: column; /* Stack options vertically */
+  gap: 10px; /* Space between options */
+  width: 100%; /* Ensure options take full width of container */
+}
+
+.option {
+  padding: 15px;
+  background-color: #f9f9fc; /* Light background */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.option:hover {
+  background-color: #87c8f0; /* Highlighted background */
+  color: #fff; /* White text on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+.option.selected {
+  background-color: #87c8f0; /* Selected background */
+  color: #fff; /* White text for selected option */
+  border-color: #1e6ea2; /* Highlight border */
+}
+
+/* Adjusting Activity Styling for Question 2 */
+.activity {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.activity input {
+  margin-top: 15px;
+}

@@ -5,15 +5,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Progress</title>
     <!-- Link to the CSS file for styling -->
-    <link rel="stylesheet" href="../CSS/navbar.css" />
+    <link rel="stylesheet" href="../css/progress.css" />
+    <link rel="stylesheet" href="../css/topbar.css" />
+    <link rel="stylesheet" href="../css/navbar.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Include Chart.js for bar chart -->
   </head>
   <body>
-    <!-- Page-specific content for Chatbot -->
-    <div class="content">
-      <h1>Welcome to the Progress Page</h1>
+    <!-- Main Container -->
+    <div class="progress-container">
+      <!-- Progress Section -->
+      <div class="progress-chart">
+        <h2>Progress</h2>
+        <canvas id="learningProgressChart"></canvas>
+        <!-- Chart.js Canvas -->
+      </div>
+
+      <!-- Friend's Progress Section -->
+      <div class="friends-progress">
+        <h2>Your Friend's Progress</h2>
+        <ul class="ranking-list">
+          <li>
+            <span class="ranking">1. Alex Johnson</span>
+            <span class="hours">12 hrs</span>
+          </li>
+          <li>
+            <span class="ranking">2. Chris Evans</span>
+            <span class="hours">10 hrs</span>
+          </li>
+          <li>
+            <span class="ranking">3. Taylor Smith</span>
+            <span class="hours">8 hrs</span>
+          </li>
+          <li>
+            <span class="ranking">4. Jordan Brown</span>
+            <span class="hours">6 hrs</span>
+          </li>
+        </ul>
+      </div>
     </div>
 
     <!-- Script to dynamically inject the navigation bar -->
-    <script src="../JS/navbar.js"></script>
+    <script src="../js/navbar.js"></script>
+    <script src="../js/topbar.js"></script>
+
+    <!-- Script for Chart.js -->
+    <script>
+      const ctx = document
+        .getElementById("learningProgressChart")
+        .getContext("2d");
+      const learningProgressChart = new Chart(ctx, {
+        type: "bar",
+        data: {
+          labels: ["Mon", "Tues", "Wed", "Thu", "Fri", "Sat", "Sun"],
+          datasets: [
+            {
+              label: "Hours Spent Learning",
+              data: [1, 2, 1.5, 3, 2.5, 4, 3.5], // Example data
+              backgroundColor: "rgba(30, 110, 162, 0.8)",
+              borderColor: "rgba(30, 110, 162, 1)",
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: {
+              display: false,
+            },
+          },
+          scales: {
+            x: {
+              title: {
+                display: true,
+                text: "Days of the Week",
+              },
+            },
+            y: {
+              title: {
+                display: true,
+                text: "Hours",
+              },
+              beginAtZero: true,
+            },
+          },
+        },
+      });
+    </script>
   </body>
 </html>

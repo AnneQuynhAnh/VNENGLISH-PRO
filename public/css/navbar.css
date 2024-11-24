@@ -14,7 +14,7 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: transparent; /* Transparent background */
+  background-color: #ffffff; /* Transparent background */
   height: 60px; /* Fixed height */
   z-index: 1000;
   border-top: 1px solid #1e6ea2; /* Top border with specified color */
